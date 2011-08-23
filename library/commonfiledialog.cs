@@ -36,6 +36,7 @@ namespace WPFFolderBrowser
 
         protected CommonFileDialog(string title)
         {
+            fileNames = new Collection<string>();
             this.title = title;
         }
 
@@ -201,11 +202,11 @@ namespace WPFFolderBrowser
             }
         }
 
-        private string initialFolder;
-        public string InitialFolder
+        private string initialDirectory;
+        public string InitialDirectory
         {
-            get { return initialFolder; }
-            set { initialFolder = value; }
+            get { return initialDirectory; }
+            set { initialDirectory = value; }
         }
 
         public bool? ShowDialog(Window owner)
@@ -277,21 +278,29 @@ namespace WPFFolderBrowser
             dialog.SetTitle(title);
 
             // TODO: Implement other property sets
-            if(fileName!=null)
-                dialog.SetFileName(fileName);
 
-            if (initialFolder != null)
+            string directory = (String.IsNullOrEmpty(fileName)) ? initialDirectory : System.IO.Path.GetDirectoryName(fileName);
+
+
+            if (directory != null)
             {
                 IShellItem folder;
                 try
                 {
-                    SHCreateItemFromParsingName(initialFolder, IntPtr.Zero, new System.Guid(IIDGuid.IShellItem), out folder);
+                    SHCreateItemFromParsingName(directory, IntPtr.Zero, new System.Guid(IIDGuid.IShellItem), out folder);
 
                     if (folder != null)
                         dialog.SetFolder(folder);
                 }
                 finally
                 { }
+            }
+           
+
+            if (!String.IsNullOrEmpty(fileName))
+            {
+                string name = System.IO.Path.GetFileName(fileName);
+                dialog.SetFileName(name);
             }
         }
 

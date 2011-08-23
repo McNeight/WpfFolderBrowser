@@ -44,11 +44,21 @@ namespace WPFFolderBrowser
         {
             IShellItemArray resultsArray;
             uint count;
-            
-            openDialogCoClass.GetResults(out resultsArray);
-            resultsArray.GetCount(out count);
-            for (int i = 0; i < count; i++)
-                names.Add(GetFileNameFromShellItem(GetShellItemAt(resultsArray, i)));
+            IShellItem directory;
+            if (names != null)
+            {
+                openDialogCoClass.GetResults(out resultsArray);
+                resultsArray.GetCount(out count);
+
+                names.Clear();
+                for (int i = 0; i < count; i++)
+                    names.Add(GetFileNameFromShellItem(GetShellItemAt(resultsArray, i)));
+
+                if (count > 0)
+                {
+                    FileName = names[0];
+                }
+            }
         }
 
         internal override NativeMethods.FOS GetDerivedOptionFlags(NativeMethods.FOS flags)
