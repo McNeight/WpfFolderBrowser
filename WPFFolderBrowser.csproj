@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
-    <Win32Resource>WPFFolderBrowser.res</Win32Resource>
+    <Win32Resource>
+    </Win32Resource>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>
@@ -78,6 +79,9 @@
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>hbarck.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
@@ -88,6 +92,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
     <Reference Include="UIAutomationProvider" />
@@ -103,7 +108,6 @@
     <Compile Include="Interop\ShellWrapperDefinitions.cs" />
     <Compile Include="Interop\ShellComInterfaces.cs" />
     <Compile Include="Interop\NativeMethods.cs" />
-    <Compile Include="Library\CommonFileDialog.cs" />
     <Compile Include="Library\WPFFolderBrowserDialog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -121,6 +125,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FileDialog API.txt" />
+    <Content Include="hbarck.ico" />
     <Content Include="TaskDialog API.txt" />
   </ItemGroup>
   <ItemGroup>
