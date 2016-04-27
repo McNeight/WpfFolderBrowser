@@ -303,7 +303,7 @@ namespace WPFFolderBrowser
             {
                 //If Vista Style dialog is unavailable, fall back to Windows Forms
 
-                System.Windows.Forms.FolderBrowserDialog dialog = new System.Windows.Forms.FolderBrowserDialog();
+                var dialog = new System.Windows.Forms.FolderBrowserDialog();
                 dialog.SelectedPath = fileName;
                 dialog.ShowNewFolderButton = true;
                 dialog.Description = this.Title;
@@ -507,7 +507,7 @@ namespace WPFFolderBrowser
         internal IShellItem GetShellItemAt(IShellItemArray array, int i)
         {
             IShellItem result;
-            uint index = (uint)i;
+            var index = (uint)i;
             array.GetItemAt(index, out result);
             return result;
         }
@@ -608,7 +608,7 @@ namespace WPFFolderBrowser
 	
             public HRESULT OnFileOk(IFileDialog pfd)
             {
-                CancelEventArgs args = new CancelEventArgs();
+                var args = new CancelEventArgs();
                 parent.OnFileOk(args);
                 return (args.Cancel ? HRESULT.S_FALSE : HRESULT.S_OK);
             }
