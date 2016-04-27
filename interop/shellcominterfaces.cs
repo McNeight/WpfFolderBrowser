@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 
 
-namespace WPFFolderBrowser.Interop
+namespace WpfFolderBrowser.Interop
 {
     //wpffb used
     [ComImport,

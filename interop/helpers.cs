@@ -3,7 +3,7 @@ using System.Windows;
 using System.Collections.Generic;
 using System.Text;
 
-namespace WPFFolderBrowser.Interop
+namespace WpfFolderBrowser.Interop
 {
     internal static class Helpers
     {

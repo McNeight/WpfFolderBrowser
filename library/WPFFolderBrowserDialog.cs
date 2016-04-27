@@ -9,12 +9,12 @@ using System.Windows;
 using System.Windows.Interop;
 //using Microsoft.SDK.Samples.VistaBridge.Library;
 //using Microsoft.SDK.Samples.VistaBridge.Interop;
-using WPFFolderBrowser;
-using WPFFolderBrowser.Interop;
+using WpfFolderBrowser;
+using WpfFolderBrowser.Interop;
 
-namespace WPFFolderBrowser
+namespace WpfFolderBrowser
 {
-    public class WPFFolderBrowserDialog : IDisposable //, IDialogControlHost
+    public class WpfFolderBrowserDialog : IDisposable //, IDialogControlHost
     {
         protected readonly Collection<string> fileNames;
         internal NativeDialogShowState showState = NativeDialogShowState.PreShow;
@@ -29,12 +29,12 @@ namespace WPFFolderBrowser
 
         #region Constructors
         
-        public WPFFolderBrowserDialog()
+        public WpfFolderBrowserDialog()
         {
             fileNames = new Collection<string>();
         }
 
-        public WPFFolderBrowserDialog(string title)
+        public WpfFolderBrowserDialog(string title)
         {
             fileNames = new Collection<string>();
             this.title = title;
@@ -586,10 +586,10 @@ namespace WPFFolderBrowser
 
         private class NativeDialogEventSink : IFileDialogEvents //, IFileDialogControlEvents
         {
-            private WPFFolderBrowserDialog parent;
+            private WpfFolderBrowserDialog parent;
             private bool firstFolderChanged = true; 
 
-            public NativeDialogEventSink(WPFFolderBrowserDialog commonDialog)
+            public NativeDialogEventSink(WpfFolderBrowserDialog commonDialog)
             {
                 this.parent = commonDialog;
             }

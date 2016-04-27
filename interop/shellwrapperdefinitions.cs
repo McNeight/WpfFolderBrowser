@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Runtime.InteropServices;
 
-namespace WPFFolderBrowser.Interop
+namespace WpfFolderBrowser.Interop
 {
     // Dummy base interface for CommonFileDialog coclasses
     internal interface NativeCommonFileDialog

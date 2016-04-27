@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("WPFFolderBrowser")]
+[assembly: AssemblyTitle("WpfFolderBrowser")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("WPFGlue")]
-[assembly: AssemblyProduct("WPFFolderBrowser")]
+[assembly: AssemblyProduct("WpfFolderBrowser")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2006 / parts hbarck 2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
