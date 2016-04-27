@@ -4,7 +4,7 @@ using System.Text;
 
 namespace WPFFolderBrowser.Interop
 {
-    internal class IIDGuid
+    internal static class IIDGuid
     {
         // IID GUID strings for relevant COM interfaces
         internal const string IModalWindow = "b4db1657-70d7-485e-8e3e-6fcb5a5c1802";
@@ -21,7 +21,7 @@ namespace WPFFolderBrowser.Interop
         internal const string IPropertyStore = "886D8EEB-8CF2-4446-8D02-CDBA1DBDCF99";
     }
 
-    internal class CLSIDGuid
+    internal static class CLSIDGuid
     {
         // CLSID GUID strings for relevant coclasses
         internal const string FileOpenDialog = "DC1C5A9C-E88A-4dde-A5A1-60F82A20AEF7";
@@ -29,7 +29,7 @@ namespace WPFFolderBrowser.Interop
         internal const string KnownFolderManager = "4df0c730-df9d-4ae3-9153-aa6b82e9795a";
     }
 
-    internal class KFIDGuid
+    internal static class KFIDGuid
     {
         internal const string ComputerFolder = "0AC0837C-BBF8-452A-850D-79D08E667CA7";
         internal const string Favorites = "1777F761-68AD-4D8A-87BD-30B759FA33DD";
