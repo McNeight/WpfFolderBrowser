@@ -355,16 +355,11 @@ namespace WPFFolderBrowser
             if (directory != null)
             {
                 IShellItem folder;
-                try
-                {
-                    SHCreateItemFromParsingName(directory, IntPtr.Zero, new System.Guid(IIDGuid.IShellItem), out folder);
+				SHCreateItemFromParsingName(directory, IntPtr.Zero, new System.Guid(IIDGuid.IShellItem), out folder);
 
-                    if (folder != null)
-                        dialog.SetFolder(folder);
-                }
-                finally
-                { }
-            }
+				if (folder != null)
+					dialog.SetFolder(folder);
+			}
            
 
             if (!String.IsNullOrEmpty(fileName))
