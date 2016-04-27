@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 namespace WPFFolderBrowser.Interop
 {
     //wpffb used
-    [ComImport(),
+    [ComImport,
     Guid(IIDGuid.IModalWindow),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     internal interface IModalWindow
@@ -20,7 +20,7 @@ namespace WPFFolderBrowser.Interop
     }
 
     // wpffb used
-    [ComImport(),
+    [ComImport,
     Guid(IIDGuid.IFileDialog),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     internal interface IFileDialog : IModalWindow
@@ -104,7 +104,7 @@ namespace WPFFolderBrowser.Interop
         void SetFilter([MarshalAs(UnmanagedType.Interface)] IntPtr pFilter);
     }
 
-    [ComImport(),
+    [ComImport,
     Guid(IIDGuid.IFileOpenDialog),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     internal interface IFileOpenDialog : IFileDialog
@@ -195,7 +195,7 @@ namespace WPFFolderBrowser.Interop
         void GetSelectedItems([MarshalAs(UnmanagedType.Interface)] out IShellItemArray ppsai);
     }
 
-    [ComImport(),
+    [ComImport,
     Guid(IIDGuid.IFileSaveDialog),
     InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
     internal interface IFileSaveDialog : IFileDialog
