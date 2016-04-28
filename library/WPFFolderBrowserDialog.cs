@@ -493,20 +493,48 @@ namespace WpfFolderBrowser
                 throw new NotSupportedException(message);
         }
 
-        #endregion
+		#endregion
 
-        #region IDisposable Members
+		#region IDisposable Members
 
-        public void Dispose()
-        {
-            throw new Exception("The method or operation is not implemented.");
-        }
+		// Dispose() calls Dispose(true)
+		public void Dispose()
+		{
+			Dispose(true);
+			GC.SuppressFinalize(this);
+		}
 
-        #endregion
+		// NOTE: Leave out the finalizer altogether if this class doesn't 
+		// own unmanaged resources itself, but leave the other methods
+		// exactly as they are. 
+		~WpfFolderBrowserDialog()
+		{
+			// Finalizer calls Dispose(false)
+			Dispose(false);
+		}
 
-        #region Event handling members
+		// The bulk of the clean-up code is implemented in Dispose(bool)
+		protected virtual void Dispose(bool disposing)
+		{
+			if (disposing) {
+				// free managed resources
+				//if (managedResource != null) {
+				//	managedResource.Dispose();
+				//	managedResource = null;
+				//}
+			}
+			// free native resources if there are any.
+			//if (nativeResource != IntPtr.Zero) {
+			//	Marshal.FreeHGlobal(nativeResource);
+			//	nativeResource = IntPtr.Zero;
+			//}
+		}
 
-        protected virtual void OnFileOk(CancelEventArgs e)
+		#endregion
+
+		#region Event handling members
+
+		protected virtual void OnFileOk(CancelEventArgs e)
         {
             //CancelEventHandler handler = FileOk;
             //if (handler != null)
