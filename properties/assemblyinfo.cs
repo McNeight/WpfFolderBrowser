@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System.Resources;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -31,6 +32,9 @@ using System.Runtime.InteropServices;
 
 // CA1014: Mark 'WPFFolderBrowser.dll' with CLSCompliant(true) because it exposes externally visible types.
 [assembly: System.CLSCompliant(true)]
+
+// CA1824: Because assembly 'WPFFolderBrowser.dll' contains a ResX-based resource file, mark it with the NeutralResourcesLanguage attribute, specifying the language of the resources within the assembly. This could improve lookup performance the first time a resource is retrieved.
+[assembly: NeutralResourcesLanguage("en-US")]
 
 // Version information for an assembly consists of the following four values:
 //
