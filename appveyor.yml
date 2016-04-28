@@ -165,7 +165,7 @@ test_script:
 #      artifacts configuration    #
 #---------------------------------#
 
-artifacts:
+#artifacts:
 #- path: bin\Debug
 #  name: BuildDebug
 #- path: bin\Release
