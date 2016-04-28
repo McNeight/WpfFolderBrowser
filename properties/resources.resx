@@ -112,9 +112,39 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AddToMruList" xml:space="preserve">
+    <value>AddToMruList cannot be changed while dialog is showing</value>
+  </data>
+  <data name="CheckFileExists" xml:space="preserve">
+    <value>CheckFileExists cannot be changed while dialog is showing</value>
+  </data>
+  <data name="CheckPathExists" xml:space="preserve">
+    <value>CheckPathExists cannot be changed while dialog is showing</value>
+  </data>
+  <data name="CheckReadOnly" xml:space="preserve">
+    <value>CheckReadOnly cannot be changed while dialog is showing</value>
+  </data>
+  <data name="CheckValidNames" xml:space="preserve">
+    <value>CheckValidNames cannot be changed while dialog is showing</value>
+  </data>
+  <data name="DereferenceLinks" xml:space="preserve">
+    <value>DereferenceLinks cannot be changed while dialog is showing</value>
+  </data>
+  <data name="IllegalPropertyChangeString" xml:space="preserve">
+    <value>cannot be changed while dialog is showing</value>
+  </data>
+  <data name="RestoreDirectory" xml:space="preserve">
+    <value>RestoreDirectory cannot be changed while dialog is showing</value>
+  </data>
+  <data name="ShowHiddenItems" xml:space="preserve">
+    <value>ShowHiddenItems cannot be changed while dialog is showing</value>
+  </data>
+  <data name="ShowPlacesList" xml:space="preserve">
+    <value>ShowPlacesList cannot be changed while dialog is showing</value>
+  </data>
 </root>

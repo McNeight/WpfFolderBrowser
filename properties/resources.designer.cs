@@ -59,5 +59,95 @@ namespace WpfFolderBrowser.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AddToMruList cannot be changed while dialog is showing.
+        /// </summary>
+        internal static string AddToMruList {
+            get {
+                return ResourceManager.GetString("AddToMruList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CheckFileExists cannot be changed while dialog is showing.
+        /// </summary>
+        internal static string CheckFileExists {
+            get {
+                return ResourceManager.GetString("CheckFileExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CheckPathExists cannot be changed while dialog is showing.
+        /// </summary>
+        internal static string CheckPathExists {
+            get {
+                return ResourceManager.GetString("CheckPathExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CheckReadOnly cannot be changed while dialog is showing.
+        /// </summary>
+        internal static string CheckReadOnly {
+            get {
+                return ResourceManager.GetString("CheckReadOnly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CheckValidNames cannot be changed while dialog is showing.
+        /// </summary>
+        internal static string CheckValidNames {
+            get {
+                return ResourceManager.GetString("CheckValidNames", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DereferenceLinks cannot be changed while dialog is showing.
+        /// </summary>
+        internal static string DereferenceLinks {
+            get {
+                return ResourceManager.GetString("DereferenceLinks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to cannot be changed while dialog is showing.
+        /// </summary>
+        internal static string IllegalPropertyChangeString {
+            get {
+                return ResourceManager.GetString("IllegalPropertyChangeString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RestoreDirectory cannot be changed while dialog is showing.
+        /// </summary>
+        internal static string RestoreDirectory {
+            get {
+                return ResourceManager.GetString("RestoreDirectory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ShowHiddenItems cannot be changed while dialog is showing.
+        /// </summary>
+        internal static string ShowHiddenItems {
+            get {
+                return ResourceManager.GetString("ShowHiddenItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ShowPlacesList cannot be changed while dialog is showing.
+        /// </summary>
+        internal static string ShowPlacesList {
+            get {
+                return ResourceManager.GetString("ShowPlacesList", resourceCulture);
+            }
+        }
     }
 }

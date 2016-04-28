@@ -1,15 +1,15 @@
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Globalization;
+using System.Reflection;
+using System.Resources;
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Windows;
 using System.Windows.Interop;
 //using Microsoft.SDK.Samples.VistaBridge.Library;
 //using Microsoft.SDK.Samples.VistaBridge.Interop;
-using WpfFolderBrowser;
 using WpfFolderBrowser.Interop;
 
 namespace WpfFolderBrowser
@@ -18,6 +18,7 @@ namespace WpfFolderBrowser
     {
         protected readonly Collection<string> fileNames;
         internal NativeDialogShowState showState = NativeDialogShowState.PreShow;
+		protected ResourceManager stringManager;
 
         private IFileDialog nativeDialog;
 //        private IFileDialogCustomize nativeDialogCustomize;
@@ -32,6 +33,7 @@ namespace WpfFolderBrowser
         public WpfFolderBrowserDialog()
         {
             fileNames = new Collection<string>();
+			stringManager = new ResourceManager("en-US", Assembly.GetExecutingAssembly());
         }
 
         public WpfFolderBrowserDialog(string title)
@@ -127,7 +129,7 @@ namespace WpfFolderBrowser
             get { return checkFileExists; }
             set 
             {
-                ThrowIfDialogShowing("CheckFileExists" + IllegalPropertyChangeString);
+                ThrowIfDialogShowing(stringManager.GetString("CheckFileExists", CultureInfo.CurrentUICulture));
                 checkFileExists = value; 
             }
         }
@@ -138,8 +140,8 @@ namespace WpfFolderBrowser
             get { return checkPathExists; }
             set 
             {
-                ThrowIfDialogShowing("CheckPathExists" + IllegalPropertyChangeString);
-                checkPathExists = value;
+				ThrowIfDialogShowing(stringManager.GetString("CheckPathExists", CultureInfo.CurrentUICulture));
+				checkPathExists = value;
             }
         }
 
@@ -149,8 +151,8 @@ namespace WpfFolderBrowser
             get { return checkValidNames; }
             set 
             {
-                ThrowIfDialogShowing("CheckValidNames" + IllegalPropertyChangeString);
-                checkValidNames = value; 
+				ThrowIfDialogShowing(stringManager.GetString("CheckPathExists", CultureInfo.CurrentUICulture));
+				checkValidNames = value; 
             }
         }
 
@@ -160,8 +162,8 @@ namespace WpfFolderBrowser
             get { return checkReadOnly; }
             set 
             {
-                ThrowIfDialogShowing("CheckReadOnly" + IllegalPropertyChangeString);
-                checkReadOnly = value; 
+				ThrowIfDialogShowing(stringManager.GetString("CheckReadOnly", CultureInfo.CurrentUICulture));
+				checkReadOnly = value; 
             }
         }
 
@@ -174,8 +176,8 @@ namespace WpfFolderBrowser
             get { return restoreDirectory; }
             set 
             {
-                ThrowIfDialogShowing("RestoreDirectory" + IllegalPropertyChangeString);
-                restoreDirectory = value; 
+				ThrowIfDialogShowing(stringManager.GetString("RestoreDirectory", CultureInfo.CurrentUICulture));
+				restoreDirectory = value; 
             }
         }
 
@@ -186,8 +188,8 @@ namespace WpfFolderBrowser
             get { return showPlacesList; }
             set 
             {
-                ThrowIfDialogShowing("ShowPlacesList" + IllegalPropertyChangeString);
-                showPlacesList = value; 
+				ThrowIfDialogShowing(stringManager.GetString("ShowPlacesList", CultureInfo.CurrentUICulture));
+				showPlacesList = value; 
             }
         }
 
@@ -197,8 +199,8 @@ namespace WpfFolderBrowser
             get { return addToMruList; }
             set 
             {
-                ThrowIfDialogShowing("AddToMruList" + IllegalPropertyChangeString);
-                addToMruList = value; 
+				ThrowIfDialogShowing(stringManager.GetString("AddToMruList", CultureInfo.CurrentUICulture));
+				addToMruList = value; 
             }
         }
 
@@ -208,8 +210,8 @@ namespace WpfFolderBrowser
             get { return showHiddenItems; }
             set 
             {
-                ThrowIfDialogShowing("ShowHiddenItems" + IllegalPropertyChangeString);
-                showHiddenItems = value; 
+				ThrowIfDialogShowing(stringManager.GetString("ShowHiddenItems", CultureInfo.CurrentUICulture));
+				showHiddenItems = value; 
             }
         }
 
@@ -227,8 +229,8 @@ namespace WpfFolderBrowser
             get { return dereferenceLinks; }
             set 
             {
-                ThrowIfDialogShowing("DereferenceLinks" + IllegalPropertyChangeString);
-                dereferenceLinks = value; }
+				ThrowIfDialogShowing(stringManager.GetString("DereferenceLinks", CultureInfo.CurrentUICulture));
+				dereferenceLinks = value; }
         }
 
         private string fileName;
