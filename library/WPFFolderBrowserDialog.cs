@@ -299,28 +299,6 @@ namespace WpfFolderBrowser
                 }
                 result = !canceled.Value;
             }
-            catch
-            {
-                //If Vista Style dialog is unavailable, fall back to Windows Forms
-
-                var dialog = new System.Windows.Forms.FolderBrowserDialog();
-                dialog.SelectedPath = fileName;
-                dialog.ShowNewFolderButton = true;
-                dialog.Description = this.Title;
-
-                result = (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK);
-                if (result.HasValue && result.Value)
-                {
-                    canceled = false;
-                    fileNames.Clear();
-                    fileNames.Add(dialog.SelectedPath);
-                }
-                else
-                {
-                    fileNames.Clear();
-                    canceled = true;
-                }
-            }
             finally
             {
                 CleanUpNativeFileDialog();
