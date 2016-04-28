@@ -86,7 +86,7 @@ namespace WpfFolderBrowser
 			}
 		}
 
-		internal NativeMethods.FOS GetDerivedOptionFlags(NativeMethods.FOS flags)
+		static internal NativeMethods.FOS GetDerivedOptionFlags(NativeMethods.FOS flags)
 		{
 
 			flags |= NativeMethods.FOS.FOS_PICKFOLDERS;
@@ -347,12 +347,12 @@ namespace WpfFolderBrowser
 			return flags;
 		}
 
-		private void ValidateCurrentDialogState()
+		static private void ValidateCurrentDialogState()
 		{
 			// TODO: Perform validation - both cross-property and pseudo-controls
 		}
 
-		private void ProcessControls()
+		static private void ProcessControls()
 		{
 			// TODO: Sort controls if necesarry - COM API might not require it, however
 		}
@@ -395,21 +395,21 @@ namespace WpfFolderBrowser
 					"FileNames empty - shouldn't happen dialog unless dialog canceled or not yet shown");
 		}
 
-		private IntPtr GetHandleFromWindow(Window window)
+		static private IntPtr GetHandleFromWindow(Window window)
 		{
 			if (window == null)
 				return NativeMethods.NO_PARENT;
 			return (new WindowInteropHelper(window)).Handle;
 		}
 
-		private bool IsOptionSet(IFileDialog dialog, NativeMethods.FOS flag)
+		static private bool IsOptionSet(IFileDialog dialog, NativeMethods.FOS flag)
 		{
 			NativeMethods.FOS currentFlags = GetCurrentOptionFlags(dialog);
 
 			return (currentFlags & flag) == flag;
 		}
 
-		internal NativeMethods.FOS GetCurrentOptionFlags(IFileDialog dialog)
+		static internal NativeMethods.FOS GetCurrentOptionFlags(IFileDialog dialog)
 		{
 			NativeMethods.FOS currentFlags;
 			dialog.GetOptions(out currentFlags);
@@ -435,14 +435,14 @@ namespace WpfFolderBrowser
 			}
 		}
 
-		internal string GetFileNameFromShellItem(IShellItem item)
+		static internal string GetFileNameFromShellItem(IShellItem item)
 		{
 			string filename;
 			item.GetDisplayName(NativeMethods.SIGDN.SIGDN_DESKTOPABSOLUTEPARSING, out filename);
 			return filename;
 		}
 
-		internal IShellItem GetShellItemAt(IShellItemArray array, int i)
+		static internal IShellItem GetShellItemAt(IShellItemArray array, int i)
 		{
 			IShellItem result;
 			var index = (uint)i;
