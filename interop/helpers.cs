@@ -5,20 +5,19 @@ using System.Text;
 
 namespace WpfFolderBrowser.Interop
 {
-    internal static class Helpers
-    {
-        // TODO: Remove Helpers class, refactor
-        internal static Window GetDefaultOwnerWindow()
-        {
-            Window defaultWindow = null;
+	internal static class Helpers
+	{
+		// TODO: Remove Helpers class, refactor
+		internal static Window GetDefaultOwnerWindow()
+		{
+			Window defaultWindow = null;
 
-            // TODO: Detect active window and change to that instead
-            if (Application.Current != null && Application.Current.MainWindow != null)
-            {
-                defaultWindow = Application.Current.MainWindow;
-            }
-            return defaultWindow;
-        }
+			// TODO: Detect active window and change to that instead
+			if (Application.Current != null && Application.Current.MainWindow != null) {
+				defaultWindow = Application.Current.MainWindow;
+			}
+			return defaultWindow;
+		}
 
-    }
+	}
 }
